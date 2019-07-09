@@ -4,6 +4,9 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import Store from "./config/store";
 import App from "./App";
+import Interceptors from "./config/interceptors";
+
+Interceptors("jwt", Store.dispatch);
 
 ReactDOM.render(
   <Provider store={Store}>

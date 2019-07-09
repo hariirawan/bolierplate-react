@@ -2,27 +2,20 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Module } from "./Module.actions";
-import Form from "./config/form";
+import DataTables from "./view/DataTables";
+import { table } from "./config/definition";
 
 function ModuleView(props) {
   return (
     <div>
-      {props.name}
-
-      {
-        Form.form_create.map((data, key) => {
-          
-        })
-      }
-
-      <button onClick={() => props.action.set_name()}>Ganti Nama</button>
+      <DataTables columns={table} data={props.data} />
     </div>
   );
 }
 
 function mapStateToProps(state) {
   return {
-    name: state.ModuleReducers.name
+    data: state.ModuleReducers.data
   };
 }
 

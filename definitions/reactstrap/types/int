@@ -1,0 +1,11 @@
+<FormGroup>
+  <Label for="%column%">%column[ucfirs]%</Label>
+  <Input type="number" name="%column%" id="%column%" placeholder="%column[ucfirst]% with a placeholder" />
+</FormGroup>
+
+<!--
+<FormGroup>
+  <Label for="umur">Umur</Label>
+  <Input type="number" name="umur" id="umur" placeholder="Umur with a placeholder" />
+</FormGroup>
+-->

@@ -1,0 +1,4 @@
+<FormGroup>
+  <Label for="%column%">%column[ucfirs]%</Label>
+  <Input type="email" name="%column%" id="%column%" placeholder="with a placeholder" />
+</FormGroup>
