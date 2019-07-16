@@ -1,3 +1,3 @@
 export const URL = {};
 
-URL.LOGIN = "/login";
+URL.LOGIN = "/v1/login";

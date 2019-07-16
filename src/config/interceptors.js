@@ -1,7 +1,7 @@
 import axios from "axios";
-import { ENV } from "./bash_url";
+import { ENV } from "./baseURL";
 
-export default function(type: string, dispatch) {
+export default function(type) {
   axios.defaults.baseURL = process.env.REACT_APP_API_URL || ENV().api;
   axios.defaults.headers.post["Content-Type"] = "application/json";
 
@@ -15,12 +15,12 @@ export default function(type: string, dispatch) {
           config.headers.common["Authorization"] = `Bearer ${token}`;
           return config;
 
-        //configurasi jwt
+        //configurasi digest
         case "digest":
-          // const date = new Date();
-          // const data = config.method + "+" + config.url + "+" + date;
-          // config.headers["Authorization"] = "";
-          // config.headers["X-" + env.PREFIX_APP + "-Date"] = date;
+          return config;
+
+        //configurasi oauth
+        case "Oauth2":
           return config;
 
         default:

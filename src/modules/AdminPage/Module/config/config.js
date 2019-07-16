@@ -1,0 +1,1 @@
+// isinya config seperti sentry
