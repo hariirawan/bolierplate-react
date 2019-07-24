@@ -1,7 +1,9 @@
 import React from "react";
 import SubMenu from "./SubMenu";
 import { NavItem, NavLink, Nav } from "reactstrap";
+import { NavLink as RNavLink, Link } from "react-router-dom";
 import classNames from "classnames";
+import Menu from "./Menu.json";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -20,52 +22,29 @@ function SideBar() {
   return (
     <div className={classNames("sidebar", { "is-open": data.isOpen })}>
       <div className="sidebar-header">
-        <a
-          href="/test"
-          color="info"
-          onClick={() => console.log("hall")}
-          style={{ color: "#fff" }}
-        >
-          &times;
-        </a>
         <h3>Administrator</h3>
       </div>
       <Nav vertical className="list-unstyled pb-3">
-        <p>Dummy Heading</p>
-        <SubMenu
-          title="Home"
-          icon={faHome}
-          items={["Home 1", "Home 2", "Home 3"]}
-        />
-        <NavItem>
-          <NavLink href="#">
-            <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
-            About
-          </NavLink>
-        </NavItem>
-        <SubMenu
-          title="Pages"
-          icon={faCopy}
-          items={["Page 1", "Page 2", "Page 3"]}
-        />
-        <NavItem>
-          <NavLink href="#">
-            <FontAwesomeIcon icon={faImage} className="mr-2" />
-            Portfolio
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#">
-            <FontAwesomeIcon icon={faQuestion} className="mr-2" />
-            FAQ
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#">
-            <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
-            Contact
-          </NavLink>
-        </NavItem>
+        {Menu.map((data, key) => {
+          if (data.children.length > 0) {
+            return (
+              <SubMenu
+                key={key}
+                title={data.name}
+                icon={`${data.icon} mr-2`}
+                items={data.children}
+              />
+            );
+          }
+          return (
+            <NavItem key={key}>
+              <NavLink to={data.url} tag={RNavLink} href={data.link}>
+                <i className={`${data.icon} mr-2`} />
+                {data.name}
+              </NavLink>
+            </NavItem>
+          );
+        })}
       </Nav>
     </div>
   );

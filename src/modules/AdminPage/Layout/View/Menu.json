@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Beranda",
+    "url": "/admin",
+    "icon": "fa fa-home",
+    "children": []
+  },
+  {
+    "name": "Data Master",
+    "icon": "fa fa-home",
+    "url": "/data-master",
+    "children": [
+      {
+        "name": "Kategori Berita",
+        "icon": "fa fa-home",
+        "url": "/admin/kategori-berita"
+      },
+      {
+        "name": "Level Pengguna",
+        "icon": "fa fa-home",
+        "url": "/admin/level-pengguna"
+      }
+    ]
+  }
+]

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "./assets/css/global.css";
 import "./assets/css/table.css";
+import "./assets/css/costum.scss";
 
 import LoginView from "./modules/Login/Login.view";
 import { useSelector } from "react-redux";

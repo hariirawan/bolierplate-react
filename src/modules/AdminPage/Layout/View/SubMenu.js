@@ -1,5 +1,6 @@
 import React from "react";
 import { Collapse, NavItem, NavLink } from "reactstrap";
+import { NavLink as RRNavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 
@@ -27,7 +28,7 @@ class SubMenu extends React.Component {
           className={classNames({ "menu-open": !this.state.collapsed })}
         >
           <NavLink className="dropdown-toggle" href="#">
-            <FontAwesomeIcon icon={icon} className="mr-2" />
+            <i className={`${icon} mr-2`} />
             {title}
           </NavLink>
         </NavItem>
@@ -38,9 +39,12 @@ class SubMenu extends React.Component {
             "mb-1": !this.state.collapsed
           })}
         >
-          {items.map(item => (
-            <NavItem key={item} className="pl-4">
-              <NavLink>{item}</NavLink>
+          {items.map((item, key) => (
+            <NavItem key={key} className="pl-4">
+              <NavLink tag={RRNavLink} to={item.url}>
+                <i className={`${item.icon} mr-2`} />
+                {item.name}
+              </NavLink>
             </NavItem>
           ))}
         </Collapse>

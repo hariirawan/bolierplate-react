@@ -19,7 +19,7 @@ function NavBar() {
     <Navbar
       color="light"
       light
-      className="navbar shadow-sm p-3 mb-5 bg-white rounded"
+      className="navbar shadow-sm p-3 mb-2 bg-white rounded"
       expand="md"
     >
       <Button color="info" onClick={() => dispatch({ type: "SET_TOGLE" })}>

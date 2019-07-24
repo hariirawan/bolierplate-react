@@ -40,7 +40,14 @@ a:focus {
 }
 
 .sidebar-header {
-  background: #1ca2e0;
+  height: 150px;
+  background-size: cover;
+  background-image: linear-gradient(
+      107deg,
+      rgba(2, 0, 36, 0.5) 0%,
+      rgba(31, 150, 180, 0.5) 100%
+    ),
+    url("../img/material-design-stock-4k-y7.jpg");
 }
 
 .sidebar-header h3 {
@@ -49,7 +56,6 @@ a:focus {
 }
 
 .sidebar ul p {
-  color: #fff;
   padding: 10px;
 }
 
@@ -63,13 +69,13 @@ a:focus {
 }
 
 .items-menu {
-  color: #fff;
+  /* color: #fff; */
 }
 
 li a.dropdown-toggle::after {
   display: inline-flex;
   position: relative;
-  left: 60%;
+  left: 40%;
   top: 10%;
 }
 
@@ -88,8 +94,8 @@ li a.dropdown-toggle::after {
 .content {
   padding: 20px;
   margin-left: 0;
-  height: 100vh;
-  background: #f4f4f4;
+  min-height: 100vh;
+  background: #e1e3e6;
 }
 
 @media only screen and (max-width: 500px) {
